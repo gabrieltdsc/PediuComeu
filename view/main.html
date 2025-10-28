@@ -1,139 +1,149 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Início</title>
-  <link rel="stylesheet" href="../public/style.css" />
-  <style>
-    /* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Poppins", Arial, sans-serif;
-  background-color: #f4f4f9;
-  color: #333;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  line-height: 1.6;
-}
-
-h2 {
-  margin-bottom: 20px;
-  color: #4a90e2;
-  text-align: center;
-}
-
-#info {
-  background-color: #ffffff;
-  padding: 15px 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  margin-bottom: 20px;
-  width: 90%;
-  max-width: 700px;
-}
-
-.noticia {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  margin-bottom: 20px;
-  max-width: 700px;
-  width: 90%;
-}
-
-.noticia h3 {
-  color: #4a90e2;
-  margin-bottom: 10px;
-}
-
-.noticia p {
-  margin-bottom: 15px;
-  color: #555;
-}
-
-.imagem-noticia {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
-
-.links a {
-  display: inline-block;
-  margin: 10px 0;
-  padding: 10px 20px;
-  text-decoration: none;
-  color: #fff;
-  background-color: #4a90e2;
-  border-radius: 8px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.links a:hover {
-  background-color: #357ABD;
-  transform: scale(1.05);
-}
-
-footer {
-  margin-top: 20px;
-  text-align: center;
-}
-
-footer a {
-  color: #4a90e2;
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laricas Delivery</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h2>Início</h2>
+  <header class="cabecalhoSite">
+    <h1 class="tituloPrincipal">Laricas Delivery</h1>
+  </header>
 
-  <div id="info"></div>
+  <main class="conteudoPrincipal">
+    <section class="secaoMenu">
+      <div class="categoriaMenu">
+        <h2 class="tituloCategoria">Pizzas</h2>
+        <div class="listaPratos">
+          <div class="cartaoPrato">
+            <img src="https://i.imgur.com/vX3qK1K.jpg" alt="Pizza Calabresa" class="imagemPrato">
+            <div class="infoPrato">
+              <h3 class="nomePrato">Pizza Calabresa</h3>
+              <p class="descricaoPrato">Molho de tomate, mussarela, calabresa, cebola e orégano.</p>
+              <p class="precoPrato">R$ 39,90</p>
+            </div>
+            <button class="botaoAdicionar" onclick="adicionarCarrinho('Pizza Calabresa', 39.90)">Adicionar ao Carrinho</button>
+          </div>
 
-  <section class="noticia">
-    <h3>Roubo no Museu do Louvre</h3>
-    <p><strong>Data:</strong> 19 de outubro de 2025</p>
-    <img src="/123.jpg" alt="Policiais no Museu do Louvre" class="imagem-noticia">
-    <p>Na manhã de domingo, quatro ladrões realizaram um roubo audacioso no Museu do Louvre, em Paris. Utilizando um elevador de carga, eles acessaram a Galeria de Apolo e, em menos de oito minutos, roubaram oito peças inestimáveis das joias da coroa francesa, avaliadas em aproximadamente €88 milhões.</p>
-    <p>Entre os itens roubados estão tiaras, colares e brincos pertencentes a imperatrizes e rainhas francesas. Notavelmente, o famoso diamante Regent, avaliado em mais de US$60 milhões, foi deixado para trás pelos criminosos.</p>
-    <p>O roubo ocorreu durante o horário de funcionamento do museu. A investigação está sendo conduzida pela procuradora parisiense Laure Beccuau, com apoio de mais de 100 policiais.</p>
-    <p>O presidente francês, Emmanuel Macron, condenou o roubo como um ataque ao patrimônio cultural da França e prometeu esforços para recuperar as peças roubadas.</p>
+          <div class="cartaoPrato">
+            <img src="https://i.imgur.com/OWrYr4V.jpg" alt="Pizza Marguerita" class="imagemPrato">
+            <div class="infoPrato">
+              <h3 class="nomePrato">Pizza Marguerita</h3>
+              <p class="descricaoPrato">Molho artesanal, tomate fresco, manjericão e queijo.</p>
+              <p class="precoPrato">R$ 42,00</p>
+            </div>
+            <button class="botaoAdicionar" onclick="adicionarCarrinho('Pizza Marguerita', 42.00)">Adicionar ao Carrinho</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="categoriaMenu">
+        <h2 class="tituloCategoria">Hambúrgueres</h2>
+        <div class="listaPratos">
+          <div class="cartaoPrato">
+            <img src="https://i.imgur.com/1v6nG9q.jpg" alt="X-Bacon" class="imagemPrato">
+            <div class="infoPrato">
+              <h3 class="nomePrato">X-Bacon</h3>
+              <p class="descricaoPrato">Hambúrguer 180g, queijo cheddar, bacon crocante e maionese da casa.</p>
+              <p class="precoPrato">R$ 28,50</p>
+            </div>
+            <button class="botaoAdicionar" onclick="adicionarCarrinho('X-Bacon', 28.50)">Adicionar ao Carrinho</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="areaCarrinho" id="carrinho">
+      <h2 class="tituloCarrinho">🛒 Seu Carrinho</h2>
+      <div id="itensCarrinho" class="listaCarrinho"></div>
+      <div class="resumoTotais">
+        <p>Subtotal: R$ <span id="subtotal">0.00</span></p>
+        <p>Taxa de Entrega: R$ <span id="taxa">5.00</span></p>
+        <p>Total: R$ <span id="total">0.00</span></p>
+      </div>
+      <button class="botaoFinalizar" onclick="finalizarPedido()">Finalizar Pedido</button>
+    </aside>
+  </main>
+
+  <section id="statusPedido" class="areaStatusPedido">
+    <h2 class="tituloStatus">📦 Pedido Confirmado!</h2>
+    <p>Número do Pedido: <b>#1234</b></p>
+    <p>Estimativa de entrega: <b>20:30 - 20:45</b></p>
+
+    <div class="rastreadorPedido">
+      <div class="etapaPedido ativa"><span></span>Recebido</div>
+      <div class="etapaPedido"><span></span>Em preparo</div>
+      <div class="etapaPedido"><span></span>Em entrega</div>
+      <div class="etapaPedido"><span></span>Entregue</div>
+    </div>
+
+    <button class="botaoVoltar" onclick="voltarInicio()">Voltar ao Menu</button>
   </section>
 
-  <nav class="links">
-    <a href="/admin.html">Ir para área administrativa</a><br><br>
-    <a href="/logout">Sair</a>
-  </nav>
-  <footer>
-    <p>Fonte: <a href="https://apnews.com/article/e213b6e933e87f5a959bb51dbfdf765f" target="_blank">AP News</a></p>
-  </footer>
-
   <script>
-    fetch("/dados")
-      .then(r => r.json())
-      .then(data => {
-        if (data.logado) {
-          document.getElementById("info").innerHTML = 
-            `<p>Bem-vindo, <b>${data.username}</b>! Seu papel é: <b>${data.role}</b>.</p>`;
-        } else {
-          document.getElementById("info").innerHTML = 
-            `<p>Você não está logado. <a href="/login.html">Fazer login</a></p>`;
-        }
+    const carrinho = [];
+    const taxaEntrega = 5.00;
+
+    function atualizarCarrinho() {
+      const itensDiv = document.getElementById('itensCarrinho');
+      const subtotalEl = document.getElementById('subtotal');
+      const totalEl = document.getElementById('total');
+
+      itensDiv.innerHTML = '';
+      let subtotal = 0;
+
+      carrinho.forEach((item, i) => {
+        subtotal += item.preco * item.qtd;
+        itensDiv.innerHTML += `
+          <div class="itemCarrinho">
+            <p><b>${item.nome}</b> (x${item.qtd})</p>
+            <p>R$ ${(item.preco * item.qtd).toFixed(2)}</p>
+            <button class="botaoRemover" onclick="removerItem(${i})">Remover</button>
+          </div>`;
       });
+
+      subtotalEl.innerText = subtotal.toFixed(2);
+      totalEl.innerText = (subtotal + taxaEntrega).toFixed(2);
+    }
+
+    function adicionarCarrinho(nome, preco) {
+      const existente = carrinho.find(p => p.nome === nome);
+      if (existente) {
+        existente.qtd++;
+      } else {
+        carrinho.push({ nome, preco, qtd: 1 });
+      }
+      atualizarCarrinho();
+    }
+
+    function removerItem(index) {
+      carrinho.splice(index, 1);
+      atualizarCarrinho();
+    }
+
+    function finalizarPedido() {
+      document.querySelector('.conteudoPrincipal').style.display = 'none';
+      document.getElementById('statusPedido').style.display = 'block';
+      atualizarStatus(0);
+      setTimeout(() => atualizarStatus(1), 3000);
+      setTimeout(() => atualizarStatus(2), 6000);
+      setTimeout(() => atualizarStatus(3), 9000);
+    }
+
+    function atualizarStatus(etapa) {
+      const etapas = document.querySelectorAll('.etapaPedido');
+      etapas.forEach((e, i) => e.classList.toggle('ativa', i <= etapa));
+    }
+
+    function voltarInicio() {
+      document.getElementById('statusPedido').style.display = 'none';
+      document.querySelector('.conteudoPrincipal').style.display = 'flex';
+      carrinho.length = 0;
+      atualizarCarrinho();
+    }
+
+    atualizarCarrinho();
   </script>
 </body>
 </html>

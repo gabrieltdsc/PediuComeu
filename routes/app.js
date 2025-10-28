@@ -19,7 +19,7 @@ app.use(
   })
 );
 
-let users = JSON.parse(fs.readFileSync("./users.json"));
+// let users = JSON.parse(fs.readFileSync("./users.json"));
 
 function salvarUsuarios() {
   fs.writeFileSync("./users.json", JSON.stringify(users, null, 2));

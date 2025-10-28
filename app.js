@@ -1,3 +1,4 @@
+// Pra iniciar o servidor tem que rodar node app.js
 const express = require("express");
 const session = require("express-session");
 const bodyParser = require("body-parser");
@@ -118,4 +119,4 @@ app.post("/alterar-papel", autenticar, adminOnly, (req, res) => {
   }
 });
 
-app.listen(PORT, () => console.log(`Servidor rodando em http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`111Servidor rodando em http://localhost:${PORT}`));
