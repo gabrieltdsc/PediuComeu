@@ -25,11 +25,16 @@ text-align: center;
 padding: 15px 0;
 position: sticky;
 top: 0;
-z-index: 30;
+z-index: 10;
+display: flex;
+justify-content: space-between;
+align-items: center;
 }
 
 .tituloPrincipal {
 font-size: 1.8rem;
+background-color: #ff4d4d;
+padding: 8px 16px;
 }
 
 .subtituloPrincipal {
@@ -239,5 +244,10 @@ background: #ccc;
 }
 
 .userIcon {
-    display: flex;
+    background-color: #ffffff;
+    color: #333;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
 }
