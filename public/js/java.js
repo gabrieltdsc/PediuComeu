@@ -1,35 +1,63 @@
 const carrinho = [];
 const taxaEntrega = 5.00;
 
+fetch("/dados")
+.then(res => res.json())
+.then(data => {
+if (!data.logado) {
+    window.location.href = "/login.html";
+    return;
+}
+
+document.querySelector(".userIcon").textContent = data.username;
+});
+
+window.onload = function () {
+    const salvo = localStorage.getItem("carrinho");
+    if (salvo) {
+        const itens = JSON.parse(salvo);
+        carrinho.push(...itens);
+    }
+    atualizarCarrinho();
+};
+
+function salvarCarrinho() {
+    localStorage.setItem("carrinho", JSON.stringify(carrinho));
+}
+
 function atualizarCarrinho() {
-    const itensDiv = document.getElementById('itensCarrinho');
-    const subtotalEl = document.getElementById('subtotal');
-    const totalEl = document.getElementById('total');
+const itensDiv = document.getElementById('itensCarrinho');
+const subtotalEl = document.getElementById('subtotal');
+const totalEl = document.getElementById('total');
 
-    itensDiv.innerHTML = '';
-    let subtotal = 0;
+itensDiv.innerHTML = '';
+let subtotal = 0;
 
-    carrinho.forEach((item, i) => {
+carrinho.forEach((item, i) => {
     subtotal += item.preco * item.qtd;
     itensDiv.innerHTML += `
         <div class="itemCarrinho">
-        <p><b>${item.nome}</b> (x${item.qtd})</p>
-        <p>R$ ${(item.preco * item.qtd).toFixed(2)}</p>
-        <button class="botaoRemover" onclick="removerItem(${i})">Remover</button>
+            <p><b>${item.nome}</b> (x${item.qtd})</p>
+            <p>R$ ${(item.preco * item.qtd).toFixed(2)}</p>
+            <button class="botaoRemover" onclick="removerItem(${i})">Remover</button>
         </div>`;
-    });
+});
 
     subtotalEl.innerText = subtotal.toFixed(2);
     totalEl.innerText = (subtotal + taxaEntrega).toFixed(2);
+
+    salvarCarrinho(); // <<< SALVA TODA VEZ QUE ATUALIZA
 }
 
 function adicionarCarrinho(nome, preco) {
     const existente = carrinho.find(p => p.nome === nome);
+
     if (existente) {
-    existente.qtd++;
+        existente.qtd++;
     } else {
-    carrinho.push({ nome, preco, qtd: 1 });
+        carrinho.push({ nome, preco, qtd: 1 });
     }
+
     atualizarCarrinho();
 }
 
@@ -41,6 +69,7 @@ function removerItem(index) {
 function finalizarPedido() {
     document.querySelector('.conteudoPrincipal').style.display = 'none';
     document.getElementById('statusPedido').style.display = 'block';
+
     atualizarStatus(0);
     setTimeout(() => atualizarStatus(1), 3000);
     setTimeout(() => atualizarStatus(2), 6000);
@@ -55,8 +84,8 @@ function atualizarStatus(etapa) {
 function voltarInicio() {
     document.getElementById('statusPedido').style.display = 'none';
     document.querySelector('.conteudoPrincipal').style.display = 'flex';
+
     carrinho.length = 0;
+    salvarCarrinho(); // limpa memória também
     atualizarCarrinho();
 }
-
-atualizarCarrinho();

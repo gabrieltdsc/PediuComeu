@@ -119,4 +119,4 @@ app.post("/alterar-papel", autenticar, adminOnly, (req, res) => {
   }
 });
 
-app.listen(PORT, () => console.log(`111Servidor rodando em http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`Servidor rodando em http://localhost:${PORT}/login.html`));
